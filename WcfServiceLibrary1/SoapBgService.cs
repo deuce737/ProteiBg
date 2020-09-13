@@ -23,17 +23,28 @@ namespace SoapBgService
         //    glr.description = "fff";
         //    return glr;
         //}
-        public Layer getLayers(long userId, string username)
+        public List<Layer> getLayers(long userId, string username)
         {
-            var glr = new Layer();
-            glr.id = 111;
-            glr.name = "dfs";
-            return glr;
+            var lrList = new List<Layer>();
+            lrList.Add(new Layer { id = 1, name = "test1", description = "layerTest1" });
+            lrList.Add(new Layer { id = 2, name = "test2", description = "layerTest2" });
+
+            //glr.id = 111;
+            //glr.name = "test";
+            //glr.description = "testGlr";
+            return lrList;
         }
-        //public string getData(string inp)
-        //{
-        //    return "Get Dataaa" + inp;
-        //}
+
+        public List<GeoObject> getGeoObjects(long userId, string username, int layerId,
+                        double bottomLeftLat, double bottomLeftLon, double topRightLat, double topRightLon,
+                        List<Filter> filters)
+        {
+            var go = new List<GeoObject>();
+            go.Add(new GeoObject { id = 1, name = "test1", description = "geoTest1" });
+            go.Add(new GeoObject { id = 2, name = "test2", description = "geoTest2" });           
+
+            return go;
+        }
 
     }
 }

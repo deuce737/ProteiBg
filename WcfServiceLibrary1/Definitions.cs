@@ -20,7 +20,7 @@ namespace SoapBgService
         //[DataMember]
         //public filter[] filters;
         [DataMember]
-       // public geoObject[] geoObjects;
+        // public geoObject[] geoObjects;
         //[DataMember]
         public int id;
         [DataMember]
@@ -29,5 +29,23 @@ namespace SoapBgService
         //public layer[] layers;
         [DataMember]
         public string name;
+    }
+
+    [DataContract]
+    public class GeoObject
+    {
+        [DataMember]
+        public int id;
+        [DataMember]
+        public string name;
+        [DataMember]
+        public string description;
+    }
+
+    [DataContract]
+    public class Filter
+    {
+        [DataMember]
+        public string nameField;
     }
 }

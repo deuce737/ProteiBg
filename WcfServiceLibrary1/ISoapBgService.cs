@@ -11,11 +11,16 @@ namespace SoapBgService
     [ServiceContract]
     public interface ISoapBgService
     {
-        //[OperationContract]
-        //layer getLayers(long userId, string username);
+        [OperationContract]
+        List<Layer> getLayers(long userId, string username);
 
         [OperationContract]
-        Layer getLayers(long userId, string username);
+        List<GeoObject> getGeoObjects(long userId, string username, int layerId,
+                            double bottomLeftLat, double bottomLeftLon, double topRightLat, double topRightLon,
+                            List<Filter> filters);
+
+        //[OperationContract]
+
         //[OperationContract]
         //string getData(string inp);
 
